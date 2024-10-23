@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Ulang Tahun</title>
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffdc4a, #ffb347); /* Gradien warna untuk latar belakang */
+}
+
+.kartu {
+    display: flex;
+    background: linear-gradient(135deg, #003399, #1a1aff); /* Gradien warna untuk bagian kiri */
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+    overflow: hidden;
+    animation: fade-in 2s ease-in-out; /* Animasi fade-in */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bagian-kiri {
+    padding: 40px;
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-container {
+    text-align: left;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+    animation: spin 4s linear infinite; /* Logo berputar secara perlahan */
+}
+.percikan-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Membuat elemen ini tidak mengganggu interaksi pengguna */
+    overflow: hidden;
+}
+
+.percikan {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #00cfff; /* Warna percikan air */
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: percikan-gerak 2s ease-out infinite;
+}
+
+.percikan1 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.percikan2 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 0.5s;
+}
+
+.percikan3 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 1s;
+}
+
+@keyframes percikan-gerak {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-150%, -150%) scale(1);
+        opacity: 0;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.judul {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan pada teks */
+}
+
+.pesan {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan pada kotak pesan */
+    line-height: 1.6;
+    animation: slide-in 1s ease-in-out; /* Animasi slide-in untuk pesan */
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.bagian-kanan {
+    width: 40%;
+    background-color: #ffdc4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+@keyframes gerak-atas-bawah {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.gambar-fajar {
+    width: 80%;
+    border-radius: 10px;
+    animation: gerak-atas-bawah 3s ease-in-out infinite; /* Menambahkan animasi */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan pada gambar */
+    transition: transform 0.3s; /* Efek zoom saat hover */
+}
+
+.gambar-fajar:hover {
+    transform: scale(1.05); /* Zoom in saat gambar dihover */
+}
+
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="happy-birthday-220024.mp3" type="audio/mpeg">
+    </audio>
+    <div class="kartu">
+        <div class="bagian-kiri">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo Ramazan" class="logo">
+            </div>
+            <h1 class="judul">HBD KANDA FAJAR KE 19</h1>
+            <p class="pesan">"Happy Birthday, Fajar! Usia baru adalah lembaran baru dalam hidupmu. Teruslah berjuang untuk impianmu dan jangan pernah berhenti percaya bahwa kamu bisa mencapainya!"</p>
+        </div>
+        <div class="bagian-kanan">
+            <div class="percikan-container">
+                <div class="percikan percikan1"></div>
+                <div class="percikan percikan2"></div>
+                <div class="percikan percikan3"></div>
+            </div>
+            <img src="IMG_4277.JPG" alt="Fajar" class="gambar-fajar">
+        </div>
+    </div>
+</body>
+</html>
